@@ -312,18 +312,7 @@ do
 
         # Restarting the network service on the DataNode.
         ssh -o 'StrictHostKeyChecking no' root@$HOST /etc/init.d/network restart
-
-	# Mount disk
-	ssh -o 'StrictHostKeyChecking no' root@$HOST << EOF
-		echo -e '\nn\np\n1\n\n\nw' | fdisk /dev/sdc
-		mkfs -t ext4 /dev/sdc1 
-		mkdir -p /hadoop/hdfs/data
-		mount /dev/sdc1 /hadoop/hdfs/data
-		df
-	EOF
-
 done
 
 echo "Ambari Server and DataNodes successfully prepped for deployment."
-
 
