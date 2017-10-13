@@ -312,7 +312,7 @@ do
 
 
         # Mount disk
-        ssh -o 'StrictHostKeyChecking no' root@$HOST echo hello > /tmp/hello.txt
+        ssh -o 'StrictHostKeyChecking no' root@$HOST 'echo hello > /tmp/hello.txt'
 
         
         # Restarting the network service on the DataNode.
